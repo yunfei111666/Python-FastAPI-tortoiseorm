@@ -1,19 +1,20 @@
 <!--
  * @Author: yunfei
  * @Date: 2022-04-22 15:22:37
- * @LastEditTime: 2022-04-22 15:30:08
- * @FilePath: /FastAPI-tortoise-orm/README.md
+ * @LastEditTime: 2022-04-22 18:25:22
+ * @FilePath: /demo/Python-FastAPI-tortoiseorm/README.md
  * @LastAuthor: Do not edit
  * @Description: 
 -->
 
 # introduce
+```
+使用 fastapi + tortoise-orm构建，Docker+GitLab-CI持续集成，自动化部署
+FastAPI: 是一个现代、快速（高性能）的 Web 框架，用于基于标准 Python 类型提示使用 Python 3.6+ 构建 API。
+tortoise-orm 是一个强大的 异步 ORM 框架，用于构建高性能的数据库模型。
 
-使用 fastapi + tortoise-orm + mysql 实现一个简单的 todolist 案例
 
-## FastAPI: 是一个现代、快速（高性能）的 Web 框架，用于基于标准 Python 类型提示使用 Python 3.6+ 构建 API。
-
-## tortoise-orm 是一个强大的 异步 ORM 框架，用于构建高性能的数据库模型。
+```
 
 # install
 
