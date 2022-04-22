@@ -1,0 +1,11 @@
+fastapi==0.74.1
+uvicorn==0.17.5
+tortoise-orm==0.18.1
+passlib==1.7.4 
+python-jose==3.3.0
+bcrypt==3.2.0
+loguru==0.6.0
+aiopathlib==0.5.0
+aiomysql==0.0.21
+Pillow==9.0.1
+python-dotenv==0.15.0
