@@ -1,0 +1,14 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+.DS_Store
+
+.vscode
+
+logs/
+*.log
+tools/security.py
+config.py
+代码评审.md

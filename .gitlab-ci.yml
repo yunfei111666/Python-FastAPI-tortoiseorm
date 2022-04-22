@@ -1,0 +1,33 @@
+
+test:build:
+    stage: test
+    script:
+      - docker build -t trunkverse_service .
+      - if [ $(docker ps -aq --filter name=trunkverse_service) ]; then docker rm -f trunkverse_service; fi
+      - docker run -d -p 8098:8098 --restart=always --name trunkverse_service trunkverse_service 
+      - echo 'docker run 完成'
+    only:
+      - test
+    tags:
+      - fastApi
+
+test:deploy:
+  image: alpine:3.7
+  stage: deploy
+  script:
+    - echo "http://mirrors.aliyun.com/alpine/v3.7/main/" > /etc/apk/repositories
+    - apk add --no-cache rsync openssh
+    - mkdir -p ~/.ssh
+    - echo "$SSH_KEY_PRIVATE" >> /root/.ssh/id_rsa
+    - echo "$SSH_KEY_PUB" >> /root/.ssh/id_rsa.pub
+    - chmod 700 /root/.ssh/
+    - chmod 600 /root/.ssh/id_rsa.pub
+    - chmod 600 /root/.ssh/id_rsa
+    - echo -e "Host *\n\t StrictHostKeyChecking no \n\n" > ~/.ssh/config
+    - rsync -av --delete   ./  $SERVER_HOST:$SERVER_PATH
+  only:
+    - test
+  tags:
+    - fastApi
+
+
